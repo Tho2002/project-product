@@ -1,0 +1,36 @@
+extends  ../../layouts/default.pug
+block main
+ h1 Chi tiết sản phẩm   
+ 
+ .container
+  if (bikelist.title)
+   h2 #{bikelist.title}
+  .product-info
+   if (bikelist.title)
+    img(
+        src=bikelist.thumbnail
+        alt=bikelist.title
+     )
+    .product-details
+      
+     if (bikelist.price)
+      p  Giá: #{bikelist.price}$
+     if (bikelist.discountPercentage)
+      p  Giảm giá: #{bikelist.discountPercentage}%
+     if (bikelist.stock)
+      p Số lượng : #{bikelist.stock}
+     if (bikelist.status)
+      div
+       span Trạng thái :
+        if (bikelist.status==="active")
+         span(class="btn btn-success") Hoạt động
+        else 
+         span(class="btn btn-danger") Dừng hoạt động
+     if (bikelist.position)
+      p Vị trí : #{bikelist.position}
+     if (bikelist.position)
+      p Mô tả  : #{bikelist.description} 
+     a(
+      class="btn btn-warning"
+       href=`${prefixAdmin}/products/edit/${bikelist.id}`
+      ) Chỉnh sửa

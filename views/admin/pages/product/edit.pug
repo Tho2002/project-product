@@ -1,0 +1,153 @@
+extends  ../../layouts/default.pug
+include ../../mixins/alert.pug 
+include ../../mixins/select-tree.pug
+block main
+  if(role.permissions.includes("products_edit")) 
+    +error(5000)
+    +alert(3000)
+    h1(class="mb-4") Chỉnh sửa sản phẩm 
+    
+    form(
+       action=`${prefixAdmin}/products/edit/${bikelist.id}?_method=PATCH`
+       id="form-edit-product"
+       method="POST"
+       enctype="multipart/form-data"
+       
+    ) 
+     div(class="form-group")
+      label(for="title") Tiêu Đề
+      input(
+       type="text"
+       class="form-control"
+       id="title"
+       name="title"
+       value=bikelist.title
+       required
+      )   
+     div(class="form-group")
+      label(for="product_category_id") Danh mục 
+      
+      select(
+        name="product_category_id" 
+        id="product_category_id" 
+        class="form-control"
+      ) 
+       option(value="") --Chọn danh mục -- 
+       if (category)
+        +select-tree(category,1,bikelist.product_category_id)
+     div(class="form-group")
+      label(for="desc") Mô tả
+      textarea(
+       type="text"
+       class="form-control"
+       id="desc"
+       name="description"
+       row="5"
+      ) #{bikelist.description}  
+     div(class="form-group form-check form-check-inline")  
+      input(
+       type="radio"
+       class="form-check-input"
+       id="featured1"
+       name="featured"
+       value="1"
+       checked=(bikelist.featured=="1"?true:false)
+      )
+      label(for="price") Nổi bật
+     div(class="form-group form-check form-check-inline")  
+      input(
+       type="radio"
+       class="form-check-input"
+       id="featured0"
+       name="featured"
+       value="0"
+       checked=(bikelist.featured=="0"?true:false)
+      )
+      label(for="price") Không
+     div(class="form-group")
+      label(for="price") Giá
+      input(
+       type="number"
+       class="form-control"
+       id="price"
+       name="price"
+       value=bikelist.price
+       min="0"
+      )
+     div(class="form-group")
+      label(for="discount") % Giảm giá
+      input(
+       type="number"
+       class="form-control"
+       id="discount"
+       name="discountPercentage"
+     value=bikelist.discountPercentage
+       min="0"
+      )
+     div(class="form-group")
+      label(for="stock") Số lượng
+      input(
+       type="number"
+       class="form-control"
+       id="stock"
+       name="stock"
+       value=bikelist.stock
+      )
+     div(
+      upload-image
+      class="form-group"
+     ) 
+      label(for="thumbnail") Ảnh
+      input(
+       type="file"
+       class="form-control-file"
+       id="thumbnail"
+       name="thumbnail"
+       upload-image-input
+       accept="image/*"
+      )
+      img(
+         src=bikelist.thumbnail
+         upload-image-preview
+         class="image-preview"
+      )
+    
+     div(class="form-group")
+      label(for="postion") Vị trí
+      input(
+       type="number"
+       class="form-control"
+       id="position"
+       name="position"
+       placeholder="Tự động tăng "
+       min="1"
+       value=bikelist.position
+      )
+     div(class="form-group form-check form-check-inline")
+      
+      input(
+       type="radio"
+       class="form-check-input"
+       id="statusActive"
+       name="status"
+       value="active"
+       checked=(bikelist.status=="active"?true:false)
+      )
+      label(for="statusActive" class="form-check-label") Hoạt động
+     div(class="form-group form-check form-check-inline")
+      
+      input(
+       type="radio"
+       class="form-check-input"
+       id="statusInActive"
+       name="status"
+       value="inactive"
+           checked=(bikelist.status=="inactive"?true:false)
+      )
+      label(for="statusInActive" class="form-check-label") Dừng Hoạt động
+     div(class="form-group")
+      button(
+       type="submit"
+       class="btn btn-primary"
+      ) Cập nhật 
+     script(src="/admin/js/product.js")       

@@ -1,0 +1,145 @@
+.header {
+  background: rgb(4, 61, 47);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.header .inner-logo a {
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  color: rgb(145, 225, 33);
+}
+.body .sider {
+  width: 150px;
+  background-color: rgba(20, 65, 7, 0.847);
+  height: 100vh;
+  position: fixed;
+  top: 56px;
+  left: 0;
+}
+.body .main {
+  margin: 15px;
+  position: relative;
+  left: 150px;
+  width: 180vh;
+}
+.sider .inner-menu ul li a {
+  color: rgb(253, 253, 253);
+  display: block;
+  padding: 6px 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+}
+.inner-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+[show-alert].alert-hidden {
+  animation-name: alert-hidden;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+[show-alert] {
+  position: fixed;
+  top: 7px;
+  right: 15px;
+  z-index: 9999;
+}
+@keyframes alert-hidden {
+  from {
+    right: 15px;
+  }
+  to {
+    display: none;
+    right: -10%;
+  }
+}
+[close-alert] {
+  color: red;
+  background-color: aqua;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+}
+.image-preview {
+  width: 150px;
+  height: auto;
+  margin-top: 15px;
+  border: 1px solid #fbeaea;
+  border-radius: 5px;
+  padding: 15px;
+}
+.image-preview[src=""] {
+  display: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #eaf1ed;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.product-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-info img {
+  max-width: 300px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(207, 24, 24, 0.1);
+}
+
+.product-details {
+  flex: 1;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #10ea30;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}

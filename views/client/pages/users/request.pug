@@ -1,0 +1,31 @@
+extends  ../../layouts/default.pug
+include ../../mixins/box-head.pug
+block main
+  
+  .container.my-3  
+   include ../../partials/list-btn-user.pug 
+   .row 
+    .col-12 
+     +box-head("Lời mời đã gửi")
+   .row
+    each user in users
+     .col-6
+      div(class="box-user add")
+       div(class="inner-avatar")
+        img(
+         src=(user.avatar?user.avatar:"/image/avatar.jpg")
+         alt=user.fullName
+        )
+       div(class="inner-info")
+          div(class="inner-name") #{user.fullName}
+          div(class="inner-buttons")
+           button(
+             btn-add-friend=user.id
+             class="btn btn-primary"
+           ) Kết bạn
+           button(
+           btn-cancel-friend=user.id
+           class="btn btn-secondary"
+           ) Hủy
+block script 
+   script(src="/js/users.js")             

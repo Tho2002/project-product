@@ -1,0 +1,461 @@
+.header {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+.header.inner-logo img {
+  max-height: 5px;
+  max-width: 10%;
+}
+.header .inner-menu > ul {
+  color: rgb(13, 13, 14);
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.header .inner-menu > ul > li {
+  margin-left: 20px;
+}
+.body .sider {
+  width: 100px;
+  background-color: rgba(11, 105, 11, 0.847);
+
+  height: 100%;
+  position: fixed;
+  top: 90px;
+  left: 1px;
+}
+.body .main {
+  margin: 4px;
+  position: relative;
+  left: 100px;
+  width: calc(100%-100px);
+}
+
+.footer {
+  background: rgb(154, 154, 244);
+  text-align: center;
+  padding: 10px;
+  color: aliceblue;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header a {
+  text-decoration: none;
+}
+header {
+  background-color: #c5ceec;
+  color: white;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.box-head {
+  margin-bottom: 50px;
+}
+.box-head .inner-title {
+  margin-bottom: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: green;
+}
+.product-item .inner-content .inner-price-old {
+  font-size: 18px;
+  font-weight: 600;
+  color: red;
+  text-decoration: line-through;
+}
+.product-item .inner-content .inner-price-new {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(9, 241, 25);
+}
+.product-item .inner-content .inner-discount {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: red;
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+.product-item {
+  border: 1px solid;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 200px;
+  height: 100%;
+}
+.product-item .inner-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-bottom: 1px solid;
+  position: relative;
+}
+.product-item .inner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-item .inner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-item .inner-featured {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: green;
+  color: white;
+  padding: 3px 6px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+}
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.sub-menu {
+  position: relative;
+  z-index: 999;
+}
+.sub-menu ul {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #444;
+  min-width: 180px;
+  display: none;
+}
+.sub-menu ul li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.sub-menu:hover > ul {
+  display: block;
+}
+.sub-menu ul li {
+  position: relative;
+}
+.sub-menu ul li ul {
+  right: 100%;
+  top: 0;
+}
+.sub-menu ul li:hover > ul {
+  display: block;
+}
+
+/* ///product-detaol// */
+.product-detail .inner-thumb img {
+  width: 100%;
+  height: auto;
+}
+.product-detail .inner-title {
+  font-size: 30px;
+
+  margin: 15px;
+}
+
+.product-detail .inner-category {
+  margin-bottom: 10px;
+}
+
+.product-detail .inner-price-new {
+  color: green;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+[show-alert].alert-hidden {
+  animation-name: alert-hidden;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+[show-alert] {
+  position: fixed;
+  top: 7px;
+  right: 15px;
+  z-index: 9999;
+}
+@keyframes alert-hidden {
+  from {
+    right: 15px;
+  }
+  to {
+    display: none;
+    right: -10%;
+  }
+}
+[close-alert] {
+  color: red;
+  background-color: aqua;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+}
+/* chat */
+
+.div {
+  margin-top: 1rem; /* Tạo khoảng cách giữa các phần tử */
+  padding: 1rem; /* Tạo đệm cho khung chứa */
+  border: 1px solid #ccc; /* Đường viền xung quanh khung chứa */
+  border-radius: 5px; /* Bo tròn góc của khung chứa */
+  bottom: 20px;
+  right: 20px;
+  width: 600px;
+  background-color: rgb(231, 202, 202);
+  border-radius: 5px;
+  line-height: 1.4;
+}
+
+.box-head {
+  font-size: 1.5rem; /* Kích thước chữ tiêu đề */
+  font-weight: bold; /* Đậm chữ tiêu đề */
+}
+
+.chat {
+  margin-top: 1rem; /* Tạo khoảng cách giữa khối chat và tiêu đề */
+}
+
+.inner-body {
+  display: flex;
+  flex-direction: column;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.inner-content {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.chat .inner-incoming .inner-content {
+  background-color: #acacc5; /* Màu nền cho tin nhắn đến */
+  align-self: flex-start; /* Đặt tin nhắn đến ở bên trái */
+}
+
+.chat .inner-outgoing .inner-content {
+  background-color: #102bde; /* Màu nền cho tin nhắn đi */
+  text-align: right;
+  color: #fdfdfd; /* Màu chữ cho tin nhắn đi */
+}
+
+.inner-name {
+  font-weight: bold;
+  color: red;
+}
+
+.inner-foot {
+  margin-top: 100px; /* Tạo khoảng cách giữa khối chat và khung nhập */
+  padding: 10px;
+}
+
+.inner-form {
+  display: flex;
+  align-items: center;
+}
+
+.inner-form input[type="text"] {
+  flex: 1;
+  padding: 0 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.inner-form button {
+  background-color: #0084ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.inner-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Thêm biểu tượng icon cho nút gửi */
+.inner-form button i {
+  font-size: 16px;
+}
+/* emoji Icon */
+.tooltip {
+  visibility: hidden;
+}
+.tooltip.shown {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* box typing */
+.box-typing {
+  position: relative;
+}
+.box-typing .inner-dots {
+  position: relative;
+  height: 20px;
+  width: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdfdfd;
+  border-radius: 45px;
+  margin-top: 2px;
+}
+.box-typing .inner-dots span {
+  animation: blink 1.5s infinite;
+  height: 5px;
+  width: 5px;
+  background-color: #444;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 3px;
+}
+.box-typing .inner-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.box-typing .inner-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes blink {
+  0% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+.chat .inner-body .inner-images img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: #fff;
+  padding: 10px;
+  margin: 0 5px 5px 0;
+  border-radius: 5px;
+}
+.chat .inner-body .inner-outgoing .inner-images {
+  text-align: left;
+}
+.chat .inner-body .inner-incoming .inner-images {
+  text-align: right;
+}
+.chat .inner-body .inner-outgoing .inner-images img {
+  margin: 0 0 5px 5px;
+}
+.chat .inner-preview-images {
+  position: relative;
+}
+.chat .inner-preview-images .label-container {
+  display: none;
+}
+.chat .inner-preview-images .image-preview {
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+}
+.chat .inner-preview-images .inner-preview-item {
+  width: 90px;
+  background-size: contain;
+}
+
+.box-user {
+  display: flex;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.box-user .inner-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: whitesmoke;
+  margin-right: 10px;
+}
+.box-user .inner-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.box-user .inner-info {
+  flex: 1;
+}
+.box-user .inner-info .inner-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.box-user [btn-cancel-friend] {
+  display: none;
+}
+.box-user.add [btn-add-friend] {
+  display: none;
+}
+.box-user.add [btn-cancel-friend] {
+  display: inline-block;
+}
+.box-user [btn-deleted-friend] {
+  display: none;
+}
+.box-user.refuse [btn-accept-friend] {
+  display: none;
+}
+.box-user.refuse [btn-refuse-friend] {
+  display: none;
+}
+.box-user.refuse [btn-deleted-friend] {
+  display: none;
+}
+.box-user.refuse [btn-deleted-friend] {
+  display: inline-block;
+}
+.box-user [btn-accepted-friend] {
+  display: none;
+}
+.box-user.accepted [btn-accept-friend] {
+  display: none;
+}
+.box-user.accepted [btn-refuse-friend] {
+  display: none;
+}
+.box-user.accepted [btn-accepted-friend] {
+  display: inline-block;
+}

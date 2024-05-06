@@ -1,0 +1,29 @@
+.row 
+    .col-12 
+
+      a(
+        class="btn btn-outline-info"
+        href="/chat"
+      ) 
+       i.fa-brands.fa-facebook-messenger
+      a(
+        class="btn btn-outline-secondary"
+        href="/users/not-friend"
+      ) Danh sách người dùng
+      a(
+        class="btn btn-outline-success"
+        href="/users/friends"
+      ) Danh sách bạn bè
+      a(
+        class="btn btn-outline-warning"
+        href="/users/request"
+      ) Lời mời đã gửi
+      a(
+        class="btn btn-primary"
+        href="/users/accept"
+      ) 
+       | Lời mời kết bạn
+       span(
+        class="badge badge-light"
+        badge-users-accept=user.id
+       ) #{user.acceptFriends.length}

@@ -1,0 +1,35 @@
+extends  ../../layouts/default.pug
+include ../../mixins/alert.pug 
+
+
+block main
+ if(role.permissions.includes("roles_create")) 
+   +error(5000)
+   h1(class="mb-4") Thêm mới quyền
+   form(
+      action=`${prefixAdmin}/roles/create`
+      method="POST"
+   ) 
+    div(class="form-group")
+     label(for="title") Tiêu Đề
+     input(
+      type="text"
+      class="form-control"
+      id="title"  
+      name="title"
+      required
+     )   
+   
+    div(class="form-group")
+     label(for="desc") Mô tả ngắn
+     textarea(
+      type="text"
+      class="form-control"
+      id="desc"
+      name="description"
+      row="5"
+     )
+    button(
+      type="submit"
+      class="btn btn-primary"
+     ) Tạo mới  
